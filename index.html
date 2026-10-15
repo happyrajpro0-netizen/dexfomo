@@ -3,226 +3,158 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Crypto Dashboard — DEX-inspired</title>
+  <title>Dexfomo — Discover the DEX Market with Greater Clarity</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/logo.svg">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">DEX-Clone Dashboard</div>
-    <div class="controls">
-      <input id="search" type="search" placeholder="Search token or pair..." aria-label="Search pairs">
-      <select id="filter-change" aria-label="Filter by 24h change">
-        <option value="all">All changes</option>
-        <option value="up">Positive ▲</option>
-        <option value="down">Negative ▼</option>
-      </select>
-      <button id="refresh" title="Refresh">⟳</button>
+    <div class="brand">
+      <img src="logo.svg" alt="Dexfomo" class="logo">Dexfomo
     </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="product.html">Product</a>
+      <a href="features.html">Features</a>
+      <a href="market.html">Market Intelligence</a>
+      <a href="discovery.html">Token Discovery</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="business.html">Business</a>
+      <a href="developer.html">Developer/API</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="ctab">Contact</a>
+    </nav>
   </header>
 
-  <main class="grid">
-    <section class="main-panel">
-      <div class="panel-header">
-        <h2>Pairs</h2>
-        <div class="panel-actions">
-          <button class="pill">24h</button>
-          <button class="pill">1h</button>
-          <button class="pill">7d</button>
-        </div>
+  <main class="hero">
+    <div class="hero-inner">
+      <h1>Discover the DEX Market with Greater Clarity.</h1>
+      <p class="lede">Dexfomo is building a crypto market-intelligence platform designed to help users explore decentralized markets, analyze tokens, and understand market activity.</p>
+      <div class="cta-row">
+        <a href="product.html" class="btn primary">Explore Dexfomo</a>
+        <a href="contact.html" class="btn secondary">Join the Waitlist</a>
       </div>
+    </div>
 
-      <div class="pairs-table" role="table" aria-label="Crypto pairs table">
-        <div class="table-head" role="rowgroup">
-          <div class="row header" role="row">
-            <div class="cell pair">Pair</div>
-            <div class="cell price">Price</div>
-            <div class="cell change">24h</div>
-            <div class="cell volume">Volume</div>
-            <div class="cell liquidity">Liquidity</div>
-            <div class="cell chart">Trend</div>
+    <section class="home-grid">
+      <section class="main-panel">
+        <!-- Preserve demo pairs table from original index.html -->
+        <div class="panel-header">
+          <h2>Pairs</h2>
+          <div class="panel-actions">
+            <button class="pill">24h</button>
+            <button class="pill">1h</button>
+            <button class="pill">7d</button>
           </div>
         </div>
 
-        <div id="table-body" class="table-body" role="rowgroup">
-          <div class="row" data-pair="ETH / USDT" role="row">
-            <div class="cell pair">
-              <div class="token">
-                <div class="avatar" style="background:#627eea">E</div>
-                <div>
-                  <div class="symbol">ETH / USDT</div>
-                  <div class="sub">Ethereum</div>
-                </div>
-              </div>
+        <div class="pairs-table" role="table" aria-label="Crypto pairs table">
+          <div class="table-head" role="rowgroup">
+            <div class="row header" role="row">
+              <div class="cell pair">Pair</div>
+              <div class="cell price">Price</div>
+              <div class="cell change">24h</div>
+              <div class="cell volume">Volume</div>
+              <div class="cell liquidity">Liquidity</div>
+              <div class="cell chart">Trend</div>
             </div>
-            <div class="cell price">$1,645.23</div>
-            <div class="cell change positive">+2.34%</div>
-            <div class="cell volume">12.4M</div>
-            <div class="cell liquidity">3.2M</div>
-            <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
           </div>
 
-          <div class="row" data-pair="BTC / USDT" role="row">
-            <div class="cell pair">
-              <div class="token">
-                <div class="avatar" style="background:#f7931a">B</div>
-                <div>
-                  <div class="symbol">BTC / USDT</div>
-                  <div class="sub">Bitcoin</div>
+          <div id="table-body" class="table-body" role="rowgroup">
+            <div class="row" data-pair="ETH / USDT" role="row">
+              <div class="cell pair">
+                <div class="token">
+                  <div class="avatar" style="background:#627eea">E</div>
+                  <div>
+                    <div class="symbol">ETH / USDT</div>
+                    <div class="sub">Ethereum</div>
+                  </div>
                 </div>
               </div>
+              <div class="cell price">$1,645.23</div>
+              <div class="cell change positive">+2.34%</div>
+              <div class="cell volume">12.4M</div>
+              <div class="cell liquidity">3.2M</div>
+              <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
             </div>
-            <div class="cell price">$28,953.10</div>
-            <div class="cell change negative">-1.12%</div>
-            <div class="cell volume">42.1M</div>
-            <div class="cell liquidity">12.7M</div>
-            <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
-          </div>
 
-          <div class="row" data-pair="SOL / USDT" role="row">
-            <div class="cell pair">
-              <div class="token">
-                <div class="avatar" style="background:#66f">S</div>
-                <div>
-                  <div class="symbol">SOL / USDT</div>
-                  <div class="sub">Solana</div>
+            <div class="row" data-pair="BTC / USDT" role="row">
+              <div class="cell pair">
+                <div class="token">
+                  <div class="avatar" style="background:#f7931a">B</div>
+                  <div>
+                    <div class="symbol">BTC / USDT</div>
+                    <div class="sub">Bitcoin</div>
+                  </div>
                 </div>
               </div>
+              <div class="cell price">$28,953.10</div>
+              <div class="cell change negative">-1.12%</div>
+              <div class="cell volume">42.1M</div>
+              <div class="cell liquidity">12.7M</div>
+              <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
             </div>
-            <div class="cell price">$98.44</div>
-            <div class="cell change positive">+4.87%</div>
-            <div class="cell volume">8.5M</div>
-            <div class="cell liquidity">1.3M</div>
-            <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
+
+            <div class="row" data-pair="SOL / USDT" role="row">
+              <div class="cell pair">
+                <div class="token">
+                  <div class="avatar" style="background:#66f">S</div>
+                  <div>
+                    <div class="symbol">SOL / USDT</div>
+                    <div class="sub">Solana</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell price">$98.44</div>
+              <div class="cell change positive">+4.87%</div>
+              <div class="cell volume">8.5M</div>
+              <div class="cell liquidity">1.3M</div>
+              <div class="cell chart"><svg class="sparkline" viewBox="0 0 60 20" preserveAspectRatio="none"></svg></div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Watchlist</h3>
+          <ul class="watchlist">
+            <li>ETH / USDT <span class="badge positive">+2.3%</span></li>
+            <li>BTC / USDT <span class="badge negative">-1.1%</span></li>
+            <li>SOL / USDT <span class="badge positive">+4.8%</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Market Summary</h3>
+          <div class="summary-grid">
+            <div>
+              <div class="label">Market Cap</div>
+              <div class="value">$1.2T</div>
+            </div>
+            <div>
+              <div class="label">24h Vol</div>
+              <div class="value">$83B</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Filters</h3>
+          <div class="filters">
+            <label><input type="checkbox" id="only-high-volume"> Only high volume (&gt; 10M)</label>
+            <label><input type="checkbox" id="only-positive"> Only positive</label>
+          </div>
+        </div>
+      </aside>
     </section>
-
-    <aside class="sidebar">
-      <div class="card">
-        <h3>Watchlist</h3>
-        <ul class="watchlist">
-          <li>ETH / USDT <span class="badge positive">+2.3%</span></li>
-          <li>BTC / USDT <span class="badge negative">-1.1%</span></li>
-          <li>SOL / USDT <span class="badge positive">+4.8%</span></li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Market Summary</h3>
-        <div class="summary-grid">
-          <div>
-            <div class="label">Market Cap</div>
-            <div class="value">$1.2T</div>
-          </div>
-          <div>
-            <div class="label">24h Vol</div>
-            <div class="value">$83B</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h3>Filters</h3>
-        <div class="filters">
-          <label><input type="checkbox" id="only-high-volume"> Only high volume (&gt; 10M)</label>
-          <label><input type="checkbox" id="only-positive"> Only positive</label>
-        </div>
-      </div>
-    </aside>
   </main>
 
   <footer class="foot">
-    <small>Demo dashboard — replace placeholder JS with live data feed for real-time updates.</small>
+    <small>Dexfomo — Demo dashboard. Live market integrations are marked as Planned.</small>
   </footer>
 
-<script>
-const searchInput = document.getElementById('search');
-const filterSelect = document.getElementById('filter-change');
-const refreshBtn = document.getElementById('refresh');
-const tableBody = document.getElementById('table-body');
-
-function drawSparkline(svg, values) {
-  const w = 60, h = 20;
-  const max = Math.max(...values), min = Math.min(...values);
-  const range = max - min || 1;
-  const step = w / (values.length - 1);
-  let d = '';
-  values.forEach((v, i) => {
-    const x = i * step;
-    const y = h - ((v - min) / range) * h;
-    d += (i === 0 ? 'M' : 'L') + x + ' ' + y + ' ';
-  });
-  svg.innerHTML = '<path d="'+d.trim()+'" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round" stroke-linecap="round"></path>';
-}
-
-function randomSeries(n, base=1) {
-  let v = base;
-  const out = [];
-  for (let i=0;i<n;i++){
-    v += (Math.random()-0.5) * base * 0.08;
-    out.push(Math.max(v, 0.0001));
-  }
-  return out;
-}
-
-function updateRow(row) {
-  const priceCell = row.querySelector('.cell.price');
-  const changeCell = row.querySelector('.cell.change');
-  const chart = row.querySelector('.sparkline');
-
-  let current = parseFloat((priceCell.textContent || '').replace(/[$,]/g,'')) || (Math.random()*1000);
-  const delta = current * ((Math.random()-0.5)/200);
-  const next = Math.max(0.0001, current + delta);
-  priceCell.textContent = (next>=1000 ? '$' + (next.toLocaleString(undefined,{maximumFractionDigits:2})) : '$' + next.toFixed(2));
-
-  const pct = ((next - current)/current)*100;
-  changeCell.textContent = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
-  changeCell.classList.toggle('positive', pct>=0);
-  changeCell.classList.toggle('negative', pct<0);
-
-  const series = randomSeries(10, next/1000 + 1);
-  drawSparkline(chart, series);
-}
-
-function updateAllRows() {
-  const rows = [...tableBody.querySelectorAll('.row')];
-  rows.forEach(r => updateRow(r));
-}
-
-function applyFilters() {
-  const q = (searchInput.value || '').toLowerCase();
-  const changeFilter = filterSelect.value;
-  const onlyHighVolume = document.getElementById('only-high-volume').checked;
-  const onlyPositive = document.getElementById('only-positive').checked;
-
-  const rows = [...tableBody.querySelectorAll('.row')];
-  rows.forEach(row => {
-    const pair = (row.dataset.pair || '').toLowerCase();
-    const changeText = row.querySelector('.cell.change').textContent || '';
-    const volText = row.querySelector('.cell.volume').textContent || '0';
-    const volNum = parseFloat(volText.replace(/[^\d.]/g,'')) || 0;
-    const isPos = changeText.includes('+');
-
-    let visible = true;
-    if (q && !pair.includes(q)) visible = false;
-    if (changeFilter === 'up' && !isPos) visible = false;
-    if (changeFilter === 'down' && isPos) visible = false;
-    if (onlyHighVolume && volNum < 10) visible = false;
-    if (onlyPositive && !isPos) visible = false;
-
-    row.style.display = visible ? '' : 'none';
-  });
-}
-
-searchInput.addEventListener('input', applyFilters);
-filterSelect.addEventListener('change', applyFilters);
-document.getElementById('only-high-volume').addEventListener('change', applyFilters);
-document.getElementById('only-positive').addEventListener('change', applyFilters);
-refreshBtn.addEventListener('click', () => { updateAllRows(); applyFilters(); });
-
-document.querySelectorAll('.sparkline').forEach(s => drawSparkline(s, randomSeries(10, Math.random()*2 + 1)));
-setInterval(() => { updateAllRows(); applyFilters(); }, 3000);
-</script>
+  <script src="scripts.js"></script>
 </body>
 </html>
